@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+
+    .nav-item {
+        @apply font-mono
+        bg-opacity-20 opacity-80
+        text-black p-1 px-2 
+        rounded-lg 
+        bg-red-400 hover:bg-red-300 
+        transition-all duration-200;
+    }
+
+ }
