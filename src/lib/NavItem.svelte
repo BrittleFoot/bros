@@ -1,6 +1,8 @@
 <script lang='ts'>
-    export let url = '/'
+
+    export let url: string
     export let name: string
+
 </script>
 
 
