@@ -1,12 +1,19 @@
 <script lang="ts">
+    import { fade } from 'svelte/transition';
+
     export let name: string;
     export let broId: number;
 
     let asset = import(`./assets/${name}/avatar.png`)
+
+    const fadeOpts = {
+        duration: 200,
+        delay: broId * 20
+    }
 </script>
 
 
-<a href="/gallery?id={broId}" sveltekit:noscroll class="group cursor-pointer relative fade-in text-sm lg:-20 duration-300 z-20">
+<a href="/gallery?id={broId}" sveltekit:noscroll in:fade={fadeOpts} out:fade={{duration:100}} class="group cursor-pointer relative fade-in text-sm lg:-20 duration-300 z-20">
     <div class="w-full relative fade-in lg:group-hover:scale-105 group-hover:shadow-me duration-300 rounded-xl aspect-square aspect-w-1 aspect-h-1 overflow-hidden">
         <div class="w-full h-full bg-white opacity-0 absolute z-20"></div>
         <div class="animate-flash-once w-full h-full bg-white opacity-0 absolute z-20"></div>

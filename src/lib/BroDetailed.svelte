@@ -1,4 +1,5 @@
 <script type='ts'>
+    import { fly, fade } from 'svelte/transition';
     import { goto } from '$app/navigation';
     export let id: number;
     
@@ -11,7 +12,17 @@
     import EmblaCarousel from 'embla-carousel'
     import type {EmblaCarouselType} from 'embla-carousel'
 	import Autoplay from 'embla-carousel-autoplay';
-    import { beforeUpdate } from 'svelte';
+    import { beforeUpdate,  } from 'svelte';
+import { circIn, circOut } from 'svelte/easing';
+
+    const flyOpts = {
+        y: 100,
+    }
+
+    const flyOutOpts = {
+        y: 100,
+        easing: circOut
+    }
 
     let embla : EmblaCarouselType;
 
@@ -31,8 +42,8 @@
 
 
 
-<div on:click|self={goToGalery} class='fixed top-0 left-0 bg-opacity-90 w-screen h-screen z-40 opacity-100 bg-white'>
-    <div class="fixed left-1/2 top-1/2 translate-y-[-50%] translate-x-[-50%] w-11/12 max-w-6xl min-h-[25%] bg-gray-200 shadow-xl rounded-3xl t">
+<div transition:fade on:click|self={goToGalery} class='fixed top-0 left-0 bg-opacity-90 w-screen h-screen z-40 opacity-100 bg-white'>
+    <div in:fly={flyOpts} out:fly={flyOutOpts} class="fixed left-1/2 top-1/2 translate-y-[-50%] translate-x-[-50%] w-11/12 max-w-6xl min-h-[25%] bg-gray-200 shadow-xl rounded-3xl">
 
         <div class="grid md:grid-cols-12 grid-cols-1 gap-x-10 mx-auto z-50 sm:max-w-xl md:max-w-fit">
             <div class="col-span-6">
@@ -74,7 +85,10 @@
                         <img src={avatar} alt="Bro's avatar" class=" col-start-4 col-span-3" />
                     </div>
                     <p class="font-mono text-justify">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est incidunt, voluptatibus laudantium ipsam veritatis nostrum! Repellendus pariatur veritatis expedita, unde at sequi. Provident harum ducimus ipsam deleniti! At, qui porro.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                        Est incidunt, voluptatibus laudantium ipsam veritatis nostrum! 
+                        Repellendus pariatur veritatis expedita, unde at sequi. 
+                        Provident harum ducimus ipsam deleniti! At, qui porro.
                     </p>
                 </div>
 
