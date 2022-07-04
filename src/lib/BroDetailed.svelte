@@ -1,19 +1,18 @@
 <script type='ts'>
-    import { fly, fade } from 'svelte/transition';
-    import { goto } from '$app/navigation';
     export let id: number;
+
+    import { fly, fade } from 'svelte/transition';
+    import { circOut } from 'svelte/easing';
+    import { goto } from '$app/navigation';
     
     import avatar from '$lib/assets/sis/avatar.png'
     import full from '$lib/assets/sis/full.png'
     import BroProperty from './BroProperty.svelte';
     
-    const goToGalery = () => goto('/gallery', {noscroll: true})
+    import BroDescription from './BroDescription.svelte';
+    import Carousel from './Carousel.svelte';
     
-    import EmblaCarousel from 'embla-carousel'
-    import type {EmblaCarouselType} from 'embla-carousel'
-	import Autoplay from 'embla-carousel-autoplay';
-    import { beforeUpdate,  } from 'svelte';
-import { circIn, circOut } from 'svelte/easing';
+    const goToGalery = () => goto('/gallery', {noscroll: true})
 
     const flyOpts = {
         y: 100,
@@ -24,30 +23,39 @@ import { circIn, circOut } from 'svelte/easing';
         easing: circOut
     }
 
-    let embla : EmblaCarouselType;
-
-    beforeUpdate(() => {
-        if (embla) {
-            embla.destroy();
-        }
-        const emblaNode = document.querySelector<HTMLElement>('.embla')
-        const options = { loop: true }
-
-        if (emblaNode) {
-            embla = EmblaCarousel(emblaNode, options, [Autoplay()])
-        }
-    })
+    const broTextDescr = `Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+        Est incidunt, voluptatibus laudantium ipsam veritatis nostrum! 
+        Repellendus pariatur veritatis expedita, unde at sequi. 
+        Provident harum ducimus ipsam deleniti! At, qui porro.`
 
 </script>
 
 
 
-<div transition:fade on:click|self={goToGalery} class='fixed top-0 left-0 bg-opacity-90 w-screen h-screen z-40 opacity-100 bg-white'>
+<div transition:fade on:mousedown|self={goToGalery} class='fixed top-0 left-0 bg-opacity-90 w-screen h-screen z-40 opacity-100 bg-white'>
     <div in:fly={flyOpts} out:fly={flyOutOpts} class="fixed left-1/2 top-1/2 translate-y-[-50%] translate-x-[-50%] w-11/12 max-w-6xl min-h-[25%] bg-gray-200 shadow-xl rounded-3xl">
 
-        <div class="grid md:grid-cols-12 grid-cols-1 gap-x-10 mx-auto z-50 sm:max-w-xl md:max-w-fit">
-            <div class="col-span-6">
-                <img src={full} alt="Bro in full straight position"/>
+        <button on:click={goToGalery} class="absolute top-4 right-4 z-[60] h-6 w-6 opacity-50 md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-current">
+                <line x1="0" y1="0" x2="100%" y2="100%" stroke="black" stroke-width="2"/>
+                <line x1="0" y1="100%" x2="100%" y2="0" stroke="black" stroke-width="2"/>
+            </svg>
+        </button>
+
+        <div class="grid md:grid-cols-12 grid-cols-1 gap-x-10 mx-auto z-50 sm:max-w-xl md:max-w-fit max-h-fit">
+
+            <div class="col-span-6 flex">
+                <img src={full} alt="Bro in full straight position" class="hidden md:block my-auto justify-center"/>
+
+                <div class="md:hidden">
+                    <Carousel>
+                        <img src={full} alt="Bro in full straight position" class="carousel-slide my-auto justify-center"/>
+                        
+                        <div class="carousel-slide">
+                            <BroDescription avatar={avatar} text={broTextDescr}/>
+                        </div>
+                    </Carousel>
+                </div>
             </div>
 
             <div class="h-full relative col-span-6 md:pr-10 md:pl-0 px-6 md:py-0 py-6 flex-col w-full flex justify-top">
@@ -68,47 +76,24 @@ import { circIn, circOut } from 'svelte/easing';
                             {/each}
                         </ul>
 
-                        <div class="embla lg:hidden">
-                            <div class="pt-2 mt-3 max-w-xl lg:hidden space-x-2 embla__container">
+                        <div class="lg:hidden cursor-grab active:cursor-grabbing overflow-hidden pt-2 mt-3 max-w-xl space-x-2">
+                            <Carousel>
                                 {#each [1,2,3,4,5,6,7,8,9] as i}
-                                <div class="embla__slide">
-                                    <BroProperty name="Style" value="Impressive" icon="@"/>
-                                </div>
+                                    <div class="carousel-slide mx-2">
+                                        <BroProperty name="Style" value="Impressive" icon="@"/>
+                                    </div>
                                 {/each}
-                            </div>
+                            </Carousel>
                         </div>
                     </div>
                 </div>
 
-                <div class="hidden md:block lg:block">
-                    <div class="grid grid-cols-9 gap-x-4 mt-3">
-                        <img src={avatar} alt="Bro's avatar" class=" col-start-4 col-span-3" />
-                    </div>
-                    <p class="font-mono text-justify">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Est incidunt, voluptatibus laudantium ipsam veritatis nostrum! 
-                        Repellendus pariatur veritatis expedita, unde at sequi. 
-                        Provident harum ducimus ipsam deleniti! At, qui porro.
-                    </p>
+                <div class="hidden md:block">
+                    <BroDescription avatar={avatar} text={broTextDescr}/>
                 </div>
-
 
             </div>
         </div>
     </div>
 
 </div>
-
-
-<style>
-    .embla {
-       overflow: hidden;
-    }
-    .embla__container {
-        display: flex;
-    }
-    .embla__slide {
-        position: relative;
-        flex: 0 0 100%;
-    }
-</style>
