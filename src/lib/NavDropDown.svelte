@@ -1,4 +1,6 @@
 <script lang='ts'>
+import { fly, fade } from "svelte/transition";
+
 import ListDrop from "./ListDrop.svelte"
 import NavItem from "./NavItem.svelte"
 
@@ -21,11 +23,13 @@ import NavItem from "./NavItem.svelte"
     </button>
 
     {#if dropped}
-    <div class="fixed top-0 left-0 w-screen h-screen bg-black opacity-5" on:click={toggle}/>
+    <div transition:fade class="fixed top-0 left-0 w-screen h-screen bg-black opacity-5" on:click={toggle}/>
 
     <div class='absolute flex flex-col space-y-2 right-0 top-10' on:click={toggle}>
-        {#each links as link}
-            <NavItem {...link} />
+        {#each links as link, i}
+            <div class="ml-auto" in:fly={{y:-10, delay: i*100}} out:fly={{y:-10}}>
+                <NavItem {...link} />
+            </div>
         {/each}
     </div>
     {/if}
