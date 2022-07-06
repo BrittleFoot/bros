@@ -1,0 +1,23 @@
+{
+  "name": "Bros #5",
+  "description": "Your bro",
+  "image": "https://buft.io/bros/5.png",
+  "dna": "59509f2d5e30e968b306e38fa97fc5243767cca0",
+  "edition": 5,
+  "date": 1657023809474,
+  "attributes": [
+    {
+      "trait_type": "base",
+      "value": "base"
+    },
+    {
+      "trait_type": "hair",
+      "value": "shadow"
+    },
+    {
+      "trait_type": "makeup",
+      "value": "eyebrows"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

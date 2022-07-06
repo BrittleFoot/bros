@@ -1,13 +1,17 @@
 <script type="ts">
-    import EmblaCarousel from 'embla-carousel'
+    import EmblaCarousel, { type EmblaCarouselType } from 'embla-carousel'
     import Autoplay from 'embla-carousel-autoplay';
-    import { onMount,  } from 'svelte';
+    import { beforeUpdate, onMount,  } from 'svelte';
 
     let target: HTMLElement;
 
+    let embla: EmblaCarouselType;
+
+    $: console.log($$slots)
+
     onMount(() => {
         if (target) {    
-            const embla = EmblaCarousel(target, {loop: true}, [Autoplay()])
+            embla = EmblaCarousel(target, {loop: true}, [Autoplay()])
             return () => embla.destroy()
         }
     })
@@ -16,6 +20,6 @@
 
 <div bind:this={target} class="overflow-hidden">
     <div class="embla__container flex">
-        <slot/>
+        <slot name="slides"/>
     </div>
 </div>

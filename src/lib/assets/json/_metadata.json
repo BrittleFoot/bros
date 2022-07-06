@@ -1,0 +1,232 @@
+[
+  {
+    "name": "Bros #1",
+    "description": "Your bro",
+    "image": "https://buft.io/bros/1.png",
+    "dna": "b4e3bc5b49a52d331d22e81a0b16f9449eb96b4b",
+    "edition": 1,
+    "date": 1657023805424,
+    "attributes": [
+      {
+        "trait_type": "base",
+        "value": "base"
+      },
+      {
+        "trait_type": "hair",
+        "value": "shadow"
+      },
+      {
+        "trait_type": "makeup",
+        "value": "eyelid"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "Bros #2",
+    "description": "Your bro",
+    "image": "https://buft.io/bros/2.png",
+    "dna": "e6a5745a54b612444ba3317143167599096dc219",
+    "edition": 2,
+    "date": 1657023806120,
+    "attributes": [
+      {
+        "trait_type": "base",
+        "value": "base"
+      },
+      {
+        "trait_type": "hair",
+        "value": "glow"
+      },
+      {
+        "trait_type": "makeup",
+        "value": "eyelid"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "Bros #3",
+    "description": "Your bro",
+    "image": "https://buft.io/bros/3.png",
+    "dna": "0d750ef55fb2620e0984c03dc0a5f44ba2d77f79",
+    "edition": 3,
+    "date": 1657023807132,
+    "attributes": [
+      {
+        "trait_type": "base",
+        "value": "base"
+      },
+      {
+        "trait_type": "hair",
+        "value": "shadow"
+      },
+      {
+        "trait_type": "makeup",
+        "value": "cat"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "Bros #4",
+    "description": "Your bro",
+    "image": "https://buft.io/bros/4.png",
+    "dna": "59d903c98dd80b318cc6f829cd90389c32305649",
+    "edition": 4,
+    "date": 1657023808516,
+    "attributes": [
+      {
+        "trait_type": "base",
+        "value": "base"
+      },
+      {
+        "trait_type": "hair",
+        "value": "shadow"
+      },
+      {
+        "trait_type": "makeup",
+        "value": "blush"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "Bros #5",
+    "description": "Your bro",
+    "image": "https://buft.io/bros/5.png",
+    "dna": "59509f2d5e30e968b306e38fa97fc5243767cca0",
+    "edition": 5,
+    "date": 1657023809474,
+    "attributes": [
+      {
+        "trait_type": "base",
+        "value": "base"
+      },
+      {
+        "trait_type": "hair",
+        "value": "shadow"
+      },
+      {
+        "trait_type": "makeup",
+        "value": "eyebrows"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "Bros #6",
+    "description": "Your bro",
+    "image": "https://buft.io/bros/6.png",
+    "dna": "6a14c4e31d3a05e08fd1072602600b3052373382",
+    "edition": 6,
+    "date": 1657023810190,
+    "attributes": [
+      {
+        "trait_type": "base",
+        "value": "base"
+      },
+      {
+        "trait_type": "hair",
+        "value": "glow"
+      },
+      {
+        "trait_type": "makeup",
+        "value": "eyebrows"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "Bros #7",
+    "description": "Your bro",
+    "image": "https://buft.io/bros/7.png",
+    "dna": "8594ab5e20aa22817fa9129e742e9aebfe84cba1",
+    "edition": 7,
+    "date": 1657023810891,
+    "attributes": [
+      {
+        "trait_type": "base",
+        "value": "base"
+      },
+      {
+        "trait_type": "hair",
+        "value": "glow"
+      },
+      {
+        "trait_type": "makeup",
+        "value": "cat"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "Bros #8",
+    "description": "Your bro",
+    "image": "https://buft.io/bros/8.png",
+    "dna": "8ab9b2905c03d8d24c161a5d221fff65640e73d4",
+    "edition": 8,
+    "date": 1657023811997,
+    "attributes": [
+      {
+        "trait_type": "base",
+        "value": "base"
+      },
+      {
+        "trait_type": "hair",
+        "value": "glow"
+      },
+      {
+        "trait_type": "makeup",
+        "value": "blush"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "Bros #9",
+    "description": "Your bro",
+    "image": "https://buft.io/bros/9.png",
+    "dna": "802401ea5a158ca4d63118a21f69ccbefffd9e4d",
+    "edition": 9,
+    "date": 1657023812885,
+    "attributes": [
+      {
+        "trait_type": "base",
+        "value": "base"
+      },
+      {
+        "trait_type": "hair",
+        "value": "shadow"
+      },
+      {
+        "trait_type": "makeup",
+        "value": "gorgeous"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  },
+  {
+    "name": "Bros #10",
+    "description": "Your bro",
+    "image": "https://buft.io/bros/10.png",
+    "dna": "9d1c15ec5a66d37f03b2eed3fe9c6b95e3dabba9",
+    "edition": 10,
+    "date": 1657023813624,
+    "attributes": [
+      {
+        "trait_type": "base",
+        "value": "base"
+      },
+      {
+        "trait_type": "hair",
+        "value": "glow"
+      },
+      {
+        "trait_type": "makeup",
+        "value": "gorgeous"
+      }
+    ],
+    "compiler": "HashLips Art Engine"
+  }
+]
